@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100">
+  <rect width="100%" height="100%" rx="14" ry="14" fill="#111"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-family="Arial" font-size="14">
+    Upload official Google Play badge
+  </text>
+</svg>

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "chk-250",
+    "type": "Checking",
+    "title": "$250 bonus",
+    "tags": [
+      "Popular"
+    ],
+    "requirements": [
+      "Deposit \u2265 $2,000 within 90 days",
+      "Keep account open for 6 months",
+      "$0 monthly fee with direct deposit"
+    ],
+    "cta": "Get offer",
+    "link": "#download"
+  },
+  {
+    "id": "cc-300",
+    "type": "Credit Card",
+    "title": "$300 cashback",
+    "tags": [
+      "Limited"
+    ],
+    "requirements": [
+      "Spend $500 in 3 months",
+      "No annual fee year 1",
+      "Dining 4\u00d7, groceries 4\u00d7"
+    ],
+    "cta": "Get offer",
+    "link": "#download"
+  },
+  {
+    "id": "brk-stock",
+    "type": "Brokerage",
+    "title": "Free stock",
+    "tags": [
+      "Ongoing"
+    ],
+    "requirements": [
+      "Deposit $100+ to qualify",
+      "Zero\u2011commission stock/ETF",
+      "Crypto & options available"
+    ],
+    "cta": "Get offer",
+    "link": "#download"
+  },
+  {
+    "id": "sav-150",
+    "type": "Savings",
+    "title": "$150 savings boost",
+    "tags": [
+      "New"
+    ],
+    "requirements": [
+      "Average balance \u2265 $5,000 for 60 days",
+      "New customers only",
+      "APY varies by state"
+    ],
+    "cta": "Get offer",
+    "link": "#download"
+  },
+  {
+    "id": "cc-1000",
+    "type": "Credit Card",
+    "title": "$1,000 welcome offer",
+    "tags": [
+      "Premium"
+    ],
+    "requirements": [
+      "Spend $10,000 in 3 months",
+      "Annual fee $0 in first year",
+      "Travel perks included"
+    ],
+    "cta": "Get offer",
+    "link": "#download"
+  },
+  {
+    "id": "chk-400",
+    "type": "Checking",
+    "title": "$400 direct deposit",
+    "tags": [
+      "Hot"
+    ],
+    "requirements": [
+      "Two or more payroll direct deposits within 90 days",
+      "Keep account open 180 days",
+      "Fee waived with DD"
+    ],
+    "cta": "Get offer",
+    "link": "#download"
+  }
+]
