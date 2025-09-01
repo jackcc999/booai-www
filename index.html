@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"/>
+    <title>Boo AI — Smarter Finance. Bigger Rewards.</title>
+    <meta name="theme-color" content="#0b1024"/>
+    <link rel="icon" href="icons/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="icons/icon-180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { background: radial-gradient(1200px 600px at 80% -10%, rgba(75,0,130,.25), transparent) #0b1024; }
+      .tap { min-height: 44px; min-width: 44px; }
+      .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+      html.menu-open, body.menu-open { overflow: hidden; height: 100%; }
+      .menu-backdrop { opacity: 0; transition: opacity .25s ease; }
+      .menu-panel { transform: translateX(100%); transition: transform .25s ease; }
+      .menu-active .menu-backdrop { opacity: .6; }
+      .menu-active .menu-panel { transform: translateX(0%); }
+      .card { border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.06); }
+      .chip { font-size: 11px; padding: 4px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); }
+    </style>
+  </head>
+  <body class="text-white min-h-screen flex flex-col">
+    <header class="max-w-7xl w-full mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="icons/icon-64.png" class="w-9 h-9" alt="Boo AI logo" loading="lazy">
+        <span class="font-semibold text-lg md:text-xl">Boo AI</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-white/80">
+        <a href="#features" class="hover:text-white">Features</a>
+        <a href="#offers" class="hover:text-white">Offers</a>
+        <a href="#how" class="hover:text-white">How it works</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden tap px-3 py-2 rounded-xl bg-white/10" aria-label="Open menu" aria-expanded="false">☰</button>
+      <a href="#download" class="hidden md:inline-block bg-yellow-400 text-[#0b1024] font-semibold px-4 py-2 rounded-xl tap">Get the app</a>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 z-50 pointer-events-none">
+      <div id="menuBackdrop" class="menu-backdrop absolute inset-0 bg-black"></div>
+      <aside class="menu-panel absolute right-0 top-0 h-full w-4/5 max-w-xs bg-[#0f1a3a] p-6 shadow-2xl">
+        <div class="flex items-center justify-between pt-safe">
+          <div class="flex items-center gap-2">
+            <img src="icons/icon-32.png" class="w-6 h-6" alt="Boo AI" loading="lazy"><span class="font-semibold">Boo AI</span>
+          </div>
+          <button id="menuClose" class="tap px-3 py-2 rounded-xl bg-white/10" aria-label="Close menu">✕</button>
+        </div>
+        <nav class="mt-6 grid gap-4 text-white/90 text-base">
+          <a href="#features" class="tap">Features</a>
+          <a href="#offers" class="tap">Offers</a>
+          <a href="#how" class="tap">How it works</a>
+          <a href="#faq" class="tap">FAQ</a>
+          <a href="#download" class="mt-2 tap inline-block bg-yellow-400 text-[#0b1024] font-semibold px-4 py-2 rounded-xl">Get the app</a>
+          <div class="mt-6 border-t border-white/10 pt-4 text-sm text-white/60">
+            <a href="https://www.booai.xyz/booai-privacy.html" class="hover:text-white">Privacy Policy</a> ·
+            <a href="https://www.booai.xyz/booai-terms.html" class="hover:text-white">Terms of Use</a>
+          </div>
+        </nav>
+      </aside>
+    </div>
+
+    <main class="flex-1">
+      <section class="max-w-7xl w-full mx-auto px-4 md:px-6 pt-4 md:pt-10 pb-16 grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] md:text-xs text-white/80">
+            💥 New — Smarter rewards with AI
+          </p>
+          <h1 class="mt-3 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+            Smarter Finance. <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-yellow-500">Bigger Rewards.</span>
+          </h1>
+          <p class="mt-3 md:mt-4 text-sm sm:text-base text-white/75 max-w-xl">
+            Boo AI finds US bank account bonuses and credit card rewards, matches them to you, and helps you track payouts—so you never leave money on the table.
+          </p>
+          <div id="download" class="mt-6 md:mt-8 flex flex-wrap items-center gap-3">
+            <a class="tap flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 px-4 py-3" href="https://apps.apple.com/app/id6747883560" aria-label="Download on the App Store">
+              <div class="grid place-items-center bg白 text-[#0b1024] w-9 h-9 rounded-xl"></div>
+              <div class="leading-none"><div class="text-[10px] text白/70">Download on the</div><div class="text-sm font-semibold">App Store</div></div>
+            </a>
+            <a class="tap flex items-center gap-3 rounded-2xl border border白/10 bg白/10 px-4 py-3" href="https://play.google.com/store/apps/details?id=com.jjt.crazycard" aria-label="Get it on Google Play">
+              <div class="grid place-items-center bg白 text-[#0b1024] w-9 h-9 rounded-xl">▶</div>
+              <div class="leading-none"><div class="text-[10px] text白/70">Get it on</div><div class="text-sm font-semibold">Google Play</div></div>
+            </a>
+          </div>
+          <p class="mt-2 text-[11px] md:text-xs text白/50">* Offers change frequently. Terms apply. Boo AI may earn a commission via partner links.</p>
+        </div>
+        <div class="mx-auto w-full max-w-sm">
+          <div class="rounded-3xl card p-5 shadow-2xl">
+            <div class="rounded-2xl bg-indigo-950/60 p-5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <img src="icons/icon-48.png" class="w-8 h-8" alt="Boo AI logo" loading="lazy">
+                  <div>
+                    <div class="text-sm font-semibold">Boo AI</div>
+                    <div class="text-xs text白/60">Offer Highlights</div>
+                  </div>
+                </div>
+                <span class="rounded-full bg-amber-300/20 px-3 py-1 text-xs font-medium text-amber-300">Hot</span>
+              </div>
+              <div class="mt-4 grid gap-3">
+                <div class="rounded-2xl border border白/10 bg白/10 p-4">
+                  <div class="flex items-center justify-between"><div class="font-medium">Credit Card — $300 Cashback</div><span class="text-xs text白/60">Limited</span></div>
+                  <div class="mt-1 text-sm text白/70">Spend $500 in 3 months</div>
+                </div>
+                <div class="rounded-2xl border border白/10 bg白/10 p-4">
+                  <div class="flex items-center justify-between"><div class="font-medium">Checking — $250 Bonus</div><span class="text-xs text白/60">Popular</span></div>
+                  <div class="mt-1 text-sm text白/70">Deposit $2,000 within 90 days</div>
+                </div>
+                <div class="rounded-2xl border border白/10 bg白/10 p-4">
+                  <div class="flex items-center justify-between"><div class="font-medium">Brokerage — Free Stock</div><span class="text-xs text白/60">Long‑running</span></div>
+                  <div class="mt-1 text-sm text白/70">Deposit $100+, T&Cs apply</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="max-w-7xl mx-auto px-4 md:px-6 pb-6 md:pb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Why Boo AI</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-center text白/70 text-sm sm:text-base">Aggregated US rewards, personalized with AI, delivered with clear steps and live reminders.</p>
+        <div class="mt-8 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-3xl card p-6">
+            <div class="mb-2">🔎</div>
+            <div class="font-semibold">All the deals, one place</div>
+            <div class="text-sm text白/70 mt-1">Bank bonuses, card sign‑ups, and brokerage promos in one feed.</div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip">Checking/Chequing</span><span class="chip">Savings</span><span class="chip">Credit cards</span><span class="chip">Brokerage</span>
+            </div>
+          </div>
+          <div class="rounded-3xl card p-6">
+            <div class="mb-2">✨</div>
+            <div class="font-semibold">AI match & guidance</div>
+            <div class="text-sm text白/70 mt-1">We rank by reward value & difficulty, and guide you step‑by‑step.</div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip">Fit score</span><span class="chip">Requirements</span><span class="chip">Timeline</span>
+            </div>
+          </div>
+          <div class="rounded-3xl card p-6">
+            <div class="mb-2">🔔</div>
+            <div class="font-semibold">Never miss a deadline</div>
+            <div class="text-sm text白/70 mt-1">Auto reminders for funding, spend milestones, and payout dates.</div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip">Push</span><span class="chip">Calendar</span><span class="chip">Email</span>
+            </div>
+          </div>
+          <div class="rounded-3xl card p-6">
+            <div class="mb-2">🛡️</div>
+            <div class="font-semibold">Transparent & independent</div>
+            <div class="text-sm text白/70 mt-1">Clear terms, reward math, and commission disclosures.</div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip">No fluff</span><span class="chip">Always current</span><span class="chip">You in control</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="offers" class="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-14">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Today’s top offers</h2>
+          <span class="text-xs text白/60">* Examples. Terms change often.</span>
+        </div>
+        <div class="mt-6 grid gap-4 lg:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-3xl card p-5">
+            <div class="flex items-center justify-between">
+              <div class="font-semibold">Checking — $250 bonus</div>
+              <span class="chip">Popular</span>
+            </div>
+            <ul class="mt-3 space-y-1.5 text-sm text白/75 list-disc pl-5">
+              <li>Deposit ≥ $2,000 within 90 days</li>
+              <li>Keep account open for 6 months</li>
+              <li>$0 monthly fee with direct deposit</li>
+            </ul>
+            <a href="#download" class="mt-4 inline-block bg-yellow-400 text-[#0b1024] font-semibold px-4 py-2 rounded-xl tap">Get offer</a>
+          </div>
+          <div class="rounded-3xl card p-5">
+            <div class="flex items-center justify-between">
+              <div class="font-semibold">Credit card — $300 back</div>
+              <span class="chip">Limited</span>
+            </div>
+            <ul class="mt-3 space-y-1.5 text-sm text白/75 list-disc pl-5">
+              <li>Spend $500 in 3 months</li>
+              <li>No annual fee year 1</li>
+              <li>Category: dining 4×, groceries 4×</li>
+            </ul>
+            <a href="#download" class="mt-4 inline-block bg-yellow-400 text-[#0b1024] font-semibold px-4 py-2 rounded-xl tap">Get offer</a>
+          </div>
+          <div class="rounded-3xl card p-5">
+            <div class="flex items-center justify-between">
+              <div class="font-semibold">Brokerage — free stock</div>
+              <span class="chip">Ongoing</span>
+            </div>
+            <ul class="mt-3 space-y-1.5 text-sm text白/75 list-disc pl-5">
+              <li>Deposit $100+ to qualify</li>
+              <li>Zero‑commission stock/ETF</li>
+              <li>Crypto & options available</li>
+            </ul>
+            <a href="#download" class="mt-4 inline-block bg-yellow-400 text-[#0b1024] font-semibold px-4 py-2 rounded-xl tap">Get offer</a>
+          </div>
+        </div>
+        <p class="text-xs text白/50 mt-4">Boo AI aggregates public promotions and partner offers. Availability varies by state and eligibility. Always check official terms before applying.</p>
+      </section>
+
+      <section id="how" class="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-14">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">How it works</h2>
+        <div class="mt-8 grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-4">
+          <div class="rounded-3xl card p-6">
+            <div class="text-2xl">🔍</div>
+            <div class="mt-2 font-semibold">1. Discover</div>
+            <div class="text-sm text白/70 mt-1">Browse all live US bank & card bonuses in one feed.</div>
+          </div>
+          <div class="rounded-3xl card p-6">
+            <div class="text-2xl">🧠</div>
+            <div class="mt-2 font-semibold">2. Match</div>
+            <div class="text-sm text白/70 mt-1">AI ranks offers by value & fit based on your goals.</div>
+          </div>
+          <div class="rounded-3xl card p-6">
+            <div class="text-2xl">📝</div>
+            <div class="mt-2 font-semibold">3. Apply & follow steps</div>
+            <div class="text-sm text白/70 mt-1">We outline exact requirements (deposit, spend, deadlines).</div>
+          </div>
+          <div class="rounded-3xl card p-6">
+            <div class="text-2xl">🎉</div>
+            <div class="mt-2 font-semibold">4. Track payout</div>
+            <div class="text-sm text白/70 mt-1">Automatic reminders so you never miss rewards.</div>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="#download" class="inline-block bg-yellow-400 text-[#0b1024] font-semibold px-5 py-3 rounded-xl tap">Start with Boo AI</a>
+        </div>
+      </section>
+
+      <section id="faq" class="max-w-5xl mx-auto px-4 md:px-6 pb-24">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center">FAQ</h2>
+        <details class="rounded-2xl card p-4 md:p-5 mt-6"><summary class="font-semibold cursor-pointer">Do you earn commissions?</summary><p class="text-sm text白/70 mt-2">Some links are partner links. If you apply or fund an account through them, Boo AI may earn a commission—at no extra cost to you.</p></details>
+        <details class="rounded-2xl card p-4 md:p-5 mt-3"><summary class="font-semibold cursor-pointer">Will applying affect my credit score?</summary><p class="text-sm text白/70 mt-2">Many credit card issuers make a hard inquiry when you apply. Boo AI simply aggregates offers and provides guidance—always review issuer terms before applying.</p></details>
+        <details class="rounded-2xl card p-4 md:p-5 mt-3"><summary class="font-semibold cursor-pointer">Is Boo AI free?</summary><p class="text-sm text白/70 mt-2">Yes. Boo AI is free to use. We may earn commissions from partner links; see our disclosures in the footer.</p></details>
+      </section>
+    </main>
+
+    <div class="md:hidden fixed inset-x-0 bottom-0 z-40">
+      <div class="safe-bottom bg-[#101736]/95 backdrop-blur border-t border白/10 px-4 py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <img src="icons/icon-32.png" class="w-6 h-6" alt="Boo AI">
+          <span class="text-sm">Boo AI</span>
+        </div>
+        <a href="#download" class="tap bg-yellow-400 text-[#0b1024] font-semibold px-4 py-2 rounded-xl">Get the app</a>
+      </div>
+    </div>
+
+    <footer class="border-t border白/10 bg-black/20">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 text-xs text白/60 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2"><img src="icons/icon-32.png" class="w-6 h-6" alt="Boo AI"><span>Boo AI</span></div>
+        <div class="flex gap-4">
+          <a href="https://www.booai.xyz/booai-privacy.html" class="hover:text白">Privacy Policy</a>
+          <a href="https://www.booai.xyz/booai-terms.html" class="hover:text白">Terms of Use</a>
+        </div>
+        <div>© <span id="year"></span> Boo AI — Smarter Finance. Bigger Rewards.</div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const htmlEl = document.documentElement;
+      const bodyEl = document.body;
+      const menu = document.getElementById('mobileMenu');
+      const menuBtn = document.getElementById('menuBtn');
+      const menuClose = document.getElementById('menuClose');
+      const menuBackdrop = document.getElementById('menuBackdrop');
+      const open = () => { menu.classList.add('menu-active'); menu.style.pointerEvents='auto'; htmlEl.classList.add('menu-open'); bodyEl.classList.add('menu-open'); menuBtn.setAttribute('aria-expanded','true'); };
+      const close = () => { menu.classList.remove('menu-active'); menu.style.pointerEvents='none'; htmlEl.classList.remove('menu-open'); bodyEl.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded','false'); };
+      menuBtn.addEventListener('click', open);
+      menuClose.addEventListener('click', close);
+      menuBackdrop.addEventListener('click', close);
+      menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', close));
+    </script>
+  </body>
+</html>
